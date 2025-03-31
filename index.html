@@ -12,7 +12,7 @@
     }
 
     #flipImage {
-      width: 600px; /* Twice the original 300px */
+      width: 1200px; /* Twice the original 300px */
       height: auto; /* Maintains aspect ratio */
       transition: opacity 1s ease-in-out;
       border: 2px solid #ccc;
@@ -32,7 +32,7 @@
     setInterval(() => {
       index = (index + 1) % images.length;
       image.src = images[index];
-    }, 2000); // Flip every 2 seconds
+    }, 1000); // Flip every 2 seconds
   </script>
 </body>
 </html>
