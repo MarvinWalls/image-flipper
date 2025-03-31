@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #flipImage {
+      width: 300px;
+      transition: opacity 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <img id="flipImage" src="image1.jpg">
+  
+  <script>
+    let image = document.getElementById("flipImage");
+    let images = ["image1.jpg", "image2.jpg"];
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      image.src = images[index];
+    }, 2000); // Flip every 2 seconds
+  </script>
+</body>
+</html>
