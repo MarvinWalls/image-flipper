@@ -3,17 +3,18 @@
 <head>
   <style>
     body {
+      margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
       background-color: #f9f9f9;
     }
 
     #flipImage {
-      width: 1200px; /* Twice the original 300px */
-      height: auto; /* Maintains aspect ratio */
+      width: 1200px;         /* Force large width */
+      height: auto;          /* Maintain aspect ratio */
+      max-width: 90vw;       /* Fallback for small screens */
       transition: opacity 1s ease-in-out;
       border: 2px solid #ccc;
       border-radius: 8px;
@@ -22,17 +23,17 @@
   </style>
 </head>
 <body>
-  <img id="flipImage" src="Image test 1.png">
+  <img id="flipImage" src="Image test 1.png" alt="Flipping Image">
   
   <script>
-    let image = document.getElementById("flipImage");
-    let images = ["Image test 1.png", "Image test 2.png"];
+    const image = document.getElementById("flipImage");
+    const images = ["Image test 1.png", "Image test 2.png"];
     let index = 0;
 
     setInterval(() => {
       index = (index + 1) % images.length;
       image.src = images[index];
-    }, 1000); // Flip every 2 seconds
+    }, 1000); // Flip every second
   </script>
 </body>
 </html>
